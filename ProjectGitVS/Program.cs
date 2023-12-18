@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<EmpresaServicio>();
 
 builder.Services.AddTransient<UsuarioServicio>();
+builder.Services.AddTransient<UsuarioXEmpresaServicio>();
 
 var app = builder.Build();
 
