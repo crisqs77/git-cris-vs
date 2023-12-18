@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Empresa>
+
+@{
+    ViewData["Title"] = "Empresas";
+}
+<div class="text-center">
+    <h1 class="display-4">Empresas</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Eliminado</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empresas in Model)
+        {
+            <tr>
+                <td>
+                    @* <input type="hidden" value="@usuarios.Id" class="ids" /> *@
+                    @empresas.Id
+                </td>
+                <td>
+                    @empresas.Nombre
+                </td>
+                <td>
+                    @* @empresas.Eliminado *@
+                    <input type="checkbox" checked="@empresas.Eliminado" disabled />
+                </td>                
+                <td>
+                    @* @empresas.Estado *@
+                    <input type="checkbox" checked="@empresas.Estado" disabled />
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Editar" asp-route-id="@empresas.Id">
+                        Editar
+                        <i class="bi-pencil-fill"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@empresas.Id">
+                        Borrar
+                        <i class="bi-trash-fill"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
