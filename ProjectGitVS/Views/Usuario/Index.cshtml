@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Edad</th>
+            <th>Tipo</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -20,13 +21,17 @@
         {
             <tr>
                 <td>
-                    <input type="hidden" value="@usuarios.Id" class="ids" />
+                    @* <input type="hidden" value="@usuarios.Id" class="ids" /> *@
+                    @usuarios.Id
                 </td>
                 <td>
                     @usuarios.Nombre
                 </td>
                 <td>
                     @usuarios.Edad
+                </td>                
+                <td>
+                    @usuarios.Tipo.Nombre
                 </td>
                 <td>
                     <a class="btn btn-primary" asp-action="Editar" asp-route-id="@usuarios.Id">
