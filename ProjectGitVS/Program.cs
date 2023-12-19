@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<EmpresaServicio>();
-
+builder.Services.AddTransient<TipoUsuarioServicio>();
 builder.Services.AddTransient<UsuarioServicio>();
 builder.Services.AddTransient<UsuarioXEmpresaServicio>();
 

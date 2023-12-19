@@ -4,7 +4,6 @@ namespace ProjectGitVS.Servicios
 {
     public class UsuarioServicio
     {
-
         public List<Usuario> All()
         {
             List<Usuario> listOfUsers = new List<Usuario>()
