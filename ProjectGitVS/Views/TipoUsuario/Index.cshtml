@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TipoUsuario>
+
+@{
+    ViewData["Title"] = "TipoUsuario";
+}
+<div class="text-center">
+    <h1 class="display-4">TipoUsuario</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tiposUsuario in Model)
+        {
+            <tr>
+                <td>
+                    @* <input type="hidden" value="@tiposUsuario.Id" class="ids" /> *@
+                    @tiposUsuario.Id
+                </td>
+                <td>
+                    @tiposUsuario.Nombre
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Editar" asp-route-id="@tiposUsuario.Id">
+                        Editar
+                        <i class="bi-pencil-fill"></i>
+                    </a>
+                    <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@tiposUsuario.Id">
+                        Borrar
+                        <i class="bi-trash-fill"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
